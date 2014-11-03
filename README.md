@@ -1,6 +1,6 @@
-=Learning by doing
+#Learning by doing
 
-=Install yeoman
+##Install yeoman
 > npm install -g yo
 Install yeoman generator for Angular
 > npm install -g generator-angular-jade-stylus
@@ -8,20 +8,20 @@ Install grunt
 > npm install -g grunt
 
 
-=Generate an app
+##Generate an app
 Create dir
 > mkdir app
 > cd app
 
-Create project
+##Create project
 > yo angular-jade-stylus --coffee --jade --stylus app-name
 
-Start development server
+##Start development server
 > grunt serve                         
 
-=Using yo generator
-# Stop grunt server
-# Generate a new route (route, controller, view and test)
+##Using yo generator
+### Stop grunt server
+### Generate a new route (route, controller, view and test)
 > yo angular-jade-stylus (aka angular-jade-stylus:app)
 > yo angular-jade-stylus:controller
 > yo angular-jade-stylus:directive
@@ -37,7 +37,7 @@ Start development server
 
 More details at https://www.npmjs.org/package/generator-angular-jade-stylus
 
-=Configure karma
+##Configure karma
 
 Open Gruntfile.js
 Find string 'karma.conf.js' and change to 'test/karma.conf.js'
