@@ -16,10 +16,14 @@ angular.module('birdyApp')
         '           <div ng-switch-when="photo">' +
         '             <img class="fit-in-row" src="{{mediaUrl}}"/>' +
         '           </div>' +
+        '           <div class="text-center" ng-switch-default>' +
+        '             NO MEDIA' +
+        '           </div>' +
         '         </div>' +
         '       </div>' +
         '       <div class="col-xs-8">' +
         '         <p>{{tweet.text}}</p>' +
+        '         <p>{{tweet.mediaUrl}}</p>' +
         '       </div>' +
         '     </div>' +
         '   </div>' +
@@ -35,7 +39,7 @@ angular.module('birdyApp')
       restrict: 'A',
       replace: true,
       require: 'ngModel',
-      link: ['scope', 'element', 'attrs', 'ngModel', function (scope, element, attrs, ngModel) {
+      link: /*['scope', 'element', 'attrs', 'ngModel', */function (scope, element, attrs, ngModel) {
         if (!ngModel) {
           return;
         }
@@ -49,7 +53,7 @@ angular.module('birdyApp')
             scope.mediaUrl = scope.tweet.entities.media[0].media_url;
           }
         };
-      }]
+      }/*]*/
 
     };
   });
