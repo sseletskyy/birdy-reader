@@ -1,20 +1,15 @@
 'use strict';
 
 angular.module('birdyApp')
-  .service('twitter', function Twitter() {
+  .service('twitter', ['$resource', function ($resource) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var consumerKey = 'bZBJRCLwyoUDy7ZERanqRnL8T';
-    var consumerSecret = 'lrgtnsQrqHGuc1Q6XiGi8siTASqbp8o9opnlf1saqAPVf4GHzs';
-    var getToken = function () {
-      return ''.concat(consumerKey, ':', consumerSecret);
-    };
+    var twitterApiUrl = 'http://127.0.0.1:9393';
+    var getTweetsMethod = twitterApiUrl + '/tweets';
 
     return {
-      getBase64Token: function () {
-        return btoa(getToken());
+      getTweets: function () {
+        return $resource(getTweetsMethod, {});
       }
+    };
 
-
-    }
-
-  });
+  }]);

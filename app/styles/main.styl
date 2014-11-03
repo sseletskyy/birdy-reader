@@ -51,3 +51,89 @@ body
     & + h4
       margin-top 28px
 
+img.fit-in-row {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*
+ * ngRepeat triggers three animation events: enter, leave and move.
+ */
+.repeat-animation.ng-enter,
+.repeat-animation.ng-leave,
+.repeat-animation.ng-move {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+/* ending enter and move styling
+   (this is what the element will animate from */
+.repeat-animation.ng-enter,
+.repeat-animation.ng-move { opacity:0; }
+
+/* ending enter and move styling
+   (this is what the element will animate towards */
+.repeat-animation.ng-enter.ng-enter-active,
+.repeat-animation.ng-move.ng-move-active { opacity:1; }
+
+/* starting leave animation */
+.repeat-animation.ng-leave { opacity:1; }
+
+/* ending leave animation */
+.repeat-animation.ng-leave.ng-leave-active { opacity:0; }
+
+/*
+ * ngView triggers three animation events: enter, leave and move.
+ */
+.view-container {
+  height:500px;
+  position:relative;
+}
+
+.view-animation.ng-enter {
+  -webkit-animation: enter_animation 1s;
+  animation: enter_animation 1s;
+
+  /*
+   * ng-animate has a slight starting delay for optimization purposes
+   * so if we see a flicker effect then we'll need to put some extra
+   * styles to "shim" the animation.
+   */
+  left:100%;
+}
+
+.view-animation.ng-leave {
+  -webkit-animation: leave_animation 1s;
+  animation: leave_animation 1s;
+}
+
+.view-animation.ng-leave,
+.view-animation.ng-enter {
+  position:absolute;
+  top:0;
+  width:100%;
+}
+
+/*
+ * the animation below will move enter in the view from the right side of the screen
+ * and move the current (expired) view from the center of the screen to the left edge
+ */
+@keyframes enter_animation {
+  from { left:100%; }
+  to { left:0; }
+}
+
+@-webkit-keyframes enter_animation {
+  from { left:100%; }
+  to { left:0; }
+}
+
+@keyframes leave_animation {
+  from { left:0; }
+  to { left:-100%; }
+}
+
+@-webkit-keyframes leave_animation {
+  from { left:0; }
+  to { left:-100%; }
+}

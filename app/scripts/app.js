@@ -2,6 +2,7 @@
 
 angular
   .module('birdyApp', [
+    'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngSanitize',

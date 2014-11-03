@@ -15,9 +15,8 @@ describe('Service: twitter', function () {
     expect(!!twitter).toBe(true);
   });
 
-  it('getBase64Token should return a string', function(){
-     console.log('token', twitter.getBase64Token());
-     expect(twitter.getBase64Token()).isString_
+  it('getTweets should return aa array', function(){
+    expect(twitter.getTweets()).isArray;
   });
 
 
