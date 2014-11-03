@@ -26,7 +26,7 @@ head
   // build:css(.tmp) styles/main.css
   link(rel="stylesheet", href="styles/main.css")
   // endbuild
-body(ng-app="birdyApp")
+body(ng-app="birdyApp" ng-strict-di)
   <!--[if lt IE 7]>
   p.browsehappy
     | You are using an
@@ -71,7 +71,7 @@ body(ng-app="birdyApp")
   // endbower
   // endbuild
 
-  // build:js(.tmp) scripts/main.js
+  // build:js scripts/main.js
   script(src="scripts/app.js")
   script(src="scripts/controllers/main.js")
   script(src="scripts/services/twitter.js")

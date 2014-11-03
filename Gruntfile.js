@@ -58,15 +58,15 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '.tmp/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
+          '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/styles/{,*/}*.css',
           '<%= yeoman.app %>/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
 
-    
+
     stylus: {
       test: {
         options: {
@@ -93,9 +93,9 @@ module.exports = function (grunt) {
         }
       }
     },
-    
 
-    
+
+
     jade: {
       options: {
         pretty: true
@@ -119,7 +119,7 @@ module.exports = function (grunt) {
         }]
       }
     },
-    
+
 
     // The actual grunt server settings
     connect: {
@@ -209,7 +209,7 @@ module.exports = function (grunt) {
     bowerInstall: {
       app: {
         src: ['<%= yeoman.app %>/index.jade'],
-        
+
         ignorePath: '<%= yeoman.app %>/'
       }
     },
